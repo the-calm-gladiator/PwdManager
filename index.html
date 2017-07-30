@@ -32,11 +32,12 @@
                 alert('You have no space!');
             }
         }
+        getTasks();
     }
     
     function getTasks(){
         var output="";
-        for(var i=0;i<localStorage.length;i++){
+        for(var i = 0;i<localStorage.length;i++){
             output += '<li>'+localStorage.getItem(localStorage.key(i))+'</li>';
         }
         $('#tasks').html(output);
@@ -60,7 +61,9 @@
                 <button id="add">Add Task</button>
                 <br/>
                 <button onclick="clearAll();">Clear Tasks</button>
-                <br/><br/><br/>
+                <br/>
+                <br/>
+                <br/>
                 <ul data-role="list-view" id="tasks"></ul>
             </div>
             <div data-role="footer">
