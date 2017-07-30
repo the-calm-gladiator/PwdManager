@@ -14,7 +14,7 @@
         function onDeviceReady() {
     }
     $(document).ready(function(){
-        $('button#add').bind('click',function(){
+        $('button#add').bind('click',function(e){
             e.preventDefault();
             var task = $('#taskInput').val();
             addTask(task);
