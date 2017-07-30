@@ -4,9 +4,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
     <title>Pwd Manager Example</title>
     
-    <link rel="stylesheet" href="css/jqueryMobilecss.css" />    
-    <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/jqueryMobile.js"></script>
+    
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script type="text/javascript" >
     
     document.addEventListener("deviceready", onDeviceReady, false);
@@ -54,7 +55,7 @@
   <body onload="getTasks();">
         <div data-role ="page">
             <div data-role="header">
-                <h2>Add Task</h2>
+                <h2>Add Todays Task</h2>
             </div>
             <div data-role="Content">
                 <input id="taskInput" type="text" placeholder="Add Task" />
