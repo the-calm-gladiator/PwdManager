@@ -12,12 +12,45 @@
     document.addEventListener("deviceready", onDeviceReady, false);
 
         function onDeviceReady() {
-         
+    }
+    $(document).ready(function(){
+        $('button#add').bind('click',function(){
+            e.preventDefault();
+            var task = $('#taskInput').val();
+            addTask(task);
+            });
+    });
     
-	}
+    function addTask(task){
+        var newDate = new Date();
+        var taskID = newDate.getTime();
+        try{
+            localStorage.setItem(taskID,task);
+            
+        }catch(e){
+            if(e == QUOTA_EXCEEDED_ERR){
+                alert('You have no space!');
+            }
+        }
+    }
+    
+    function getTasks(){
+        var output="";
+        for(var i=0;i<localStorage.length;i++){
+            output += '<li>'+localStorage.getItem(localStorage.key(i))+'</li>';
+        }
+        $('#tasks').html(output);
+        $('#tasks').listview(refresh);
+    }
+    
+    function clearAll(){
+        localStorage.clear();
+        $('#tasks').html("");
+        return false();
+        }
     </script>
       </head>
-  <body>
+  <body onload="getTasks();">
         <div data-role ="page">
             <div data-role="header">
                 <h2>Add Task</h2>
@@ -27,11 +60,11 @@
                 <button id="add">Add Task</button>
                 <br/>
                 <button onclick="clearAll();">Clear Tasks</button>
-                <br/>
-                <ul id="tasks"></ul>
+                <br/><br/><br/>
+                <ul data-role="list-view" id="tasks"></ul>
             </div>
             <div data-role="footer">
-                <h4>Copyright &copy; 2017</h4>
+                <h4>Copyright&copy;2017</h4>
             </div>
     </div>
   </body>
