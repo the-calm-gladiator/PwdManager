@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Device Properties Example</title>
+    <title>Pwd Manager Example</title>
     
     <link rel"stylesheet" href="css/jqueryMobilecss.css" />
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
@@ -9,11 +9,24 @@
     <script type="text/javascript" charset="utf-8" src="js/jqueryMobile.js"></script>
     <script type="text/javascript" >
     
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+        function onDeviceReady() {
+         
     
+	}
     </script>
       </head>
   <body>
-    <h1> My Device Info </h1>
-    <p id="deviceProperties">Loading device properties...</p>
+        <div data-role ="page">
+            <div data-role="header">
+                <h2>Add Task</h2>
+            </div>
+            <div data-role="Content">
+            </div>
+            <div data-role="footer">
+                <h2>Copyright &copy 2017;</h2>
+            </div>
+    </div>
   </body>
 </html>
